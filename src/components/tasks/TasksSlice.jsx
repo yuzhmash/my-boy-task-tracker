@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     data: [],
-    tasksLoadingStatus: "idle"
+    tasksLoadingStatus: "idle",
+    currentdate: {}
 }
 
 const tasksSlice = createSlice({
@@ -15,8 +16,12 @@ const tasksSlice = createSlice({
                 data: [...state.data, actions.payload],
                 tasksLoadingStatus: "idle"
             }
-            state.data = actions.payload
-            state.tasksLoadingStatus = "idle"
+        },
+        addCurrentDate: (state, actions) => {
+            return {
+                ...state, 
+                currentdate: actions.payload
+            }
         },
         loadingTask: state => {state.tasksLoadingStatus = "loading"},
         errorTask: state => {state.tasksLoadingStatus = "error"}
@@ -30,5 +35,6 @@ export default reducer;
 export const {
     addTask,
     loadingTask,
-    errorTask
+    errorTask,
+    addCurrentDate
 } = actions;

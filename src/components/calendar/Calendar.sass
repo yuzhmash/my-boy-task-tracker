@@ -1,0 +1,70 @@
+.calendar
+    width: 248px
+    min-height: 200px
+    background-color: #202020
+    border: 2px solid #4C1D1D
+    border-radius: 10px
+    position: absolute
+    transform: translate(-50%, -50%)
+    color: #fff
+    top: 59%
+    left: 42.5%
+    transform: translate(-50%, -50%)
+    padding-top: 10px
+    padding-bottom: 10px
+    pointer-events: auto
+    &__today
+        border-bottom: 1px solid #4C1D1D
+        padding: 0 0 10px 10px
+    &__data
+        margin: 10px 10px 0 10px
+        font-weight: 700
+        display: flex
+        justify-content: space-between
+        margin-bottom: 15px
+        div
+            width: 50px
+            display: flex
+            align-items: center
+            font-size: 13px
+            font-weight: 300
+            cursor: pointer
+            svg
+                &:hover
+                    color: #ff0000
+    &__week
+        width: 246px
+        font-size: 15px
+        color: rgba(255, 248, 231, .7)
+        display: grid
+        grid-template-columns: repeat(7, 1fr)
+        align-items: center
+        justify-items: center
+        list-style-type: none
+        font-size: 10px
+        margin-bottom: 10px
+    &__days
+        width: 236px
+        font-size: 15px
+        display: grid
+        grid-template-columns: repeat(7, 1fr)
+        gap: 10px
+        align-items: center
+        justify-items: center
+        list-style-type: none
+        margin: 0 auto
+        li
+            cursor: pointer
+
+.inactive
+    color: rgba(255, 248, 231, .3)
+
+.active
+    color: rgb(255, 0, 0)
+    &:hover
+        color: rgba(255, 0, 0, .7)
+
+.just-day
+    color: rgb(255, 248, 231)
+    &:hover
+        color: rgba(255, 248, 231, .7)

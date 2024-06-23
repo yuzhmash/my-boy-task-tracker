@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = ({
-    newTask: false
+    newTask: false,
+    calendarStatus: false,
+    tasksDate: ''
 })
 
 const addTaskSlice = createSlice({
@@ -9,7 +11,8 @@ const addTaskSlice = createSlice({
     initialState,
     reducers: {
         createNewTask: (state) => {state.newTask = true},
-        cancleNewTask: (state) => {state.newTask = false}
+        cancleNewTask: (state) => {state.newTask = false},
+        showHideCalendar: (state) => {state.calendarStatus = !state.calendarStatus}
     }
 })
 
@@ -18,5 +21,6 @@ const {actions, reducer} = addTaskSlice;
 export default reducer;
 export const {
     createNewTask,
-    cancleNewTask
+    cancleNewTask,
+    showHideCalendar
 } = actions;
